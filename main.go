@@ -16,7 +16,7 @@ func main() {
 		panic("Error loading .env file")
 	}
 	token := os.Getenv("TOKEN")
-	webhookURL := os.Getenv("WEBHOOK_URL")
+	//webhookURL := os.Getenv("WEBHOOK_URL")
 	localPort := os.Getenv("LOCAL_PORT")
 	println(token)
 
@@ -27,12 +27,12 @@ func main() {
 	bot.Debug = true
 	log.Printf("Authorized on account %s", bot.Self.UserName)
 
-	wh, _ := tgbotapi.NewWebhook(webhookURL + bot.Token)
+	//wh, _ := tgbotapi.NewWebhook(webhookURL + bot.Token)
 
-	_, err = bot.Request(wh)
-	if err != nil {
-		log.Fatal(err)
-	}
+	//_, err = bot.Request(wh)
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
 
 	info, err := bot.GetWebhookInfo()
 	if err != nil {
